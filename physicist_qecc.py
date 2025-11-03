@@ -272,7 +272,7 @@ if __name__ == '__main__':
     logical_error_rates_baseline = []
     logical_error_rates_5q = []
     
-    print("Starting QEC simulations (V19, Final Syntax Fix)... This may take a while.")
+    print("Starting QEC simulations...")
     print(f"Running {SHOTS} shots for each of {len(PHYSICAL_ERROR_RATES)} physical error rates.")
     
     for p in PHYSICAL_ERROR_RATES:
@@ -298,7 +298,7 @@ if __name__ == '__main__':
     plt.figure(figsize=(12, 8))
     
     plt.plot(PHYSICAL_ERROR_RATES, logical_error_rates_baseline, 'o-', label='Baseline (No QEC)', markersize=8)
-    plt.plot(PHYSICAL_ERROR_RATES, logical_error_rates_5q, 's-', label='5-Qubit Code (User Encoder)', markersize=8)
+    plt.plot(PHYSICAL_ERROR_RATES, logical_error_rates_5q, 's-', label='5-Qubit Code ', markersize=8)
     
     plt.plot(PHYSICAL_ERROR_RATES, PHYSICAL_ERROR_RATES, 'k--', label='Threshold (p_log = p_phys)')
     
@@ -308,7 +308,7 @@ if __name__ == '__main__':
     
     plt.xlabel('Physical Error Rate ($p_{phys}$)', fontsize=14)
     plt.ylabel('Logical Error Rate ($p_{log}$)', fontsize=14)
-    plt.title('QEC Performance: 5-Qubit Code vs. Baseline (V19)', fontsize=16)
+    plt.title('QEC Performance: 5-Qubit Code vs. Baseline ', fontsize=16)
     plt.xscale('log')
     plt.yscale('log')
     plt.legend(fontsize=12)
@@ -321,3 +321,4 @@ if __name__ == '__main__':
     print(f"Plot saved as '{output_filename}'")
     
     plt.show()
+
